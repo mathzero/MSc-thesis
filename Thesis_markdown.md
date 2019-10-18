@@ -1,25 +1,14 @@
-![http://multicore.doc.ic.ac.uk/images/logo\_imperial\_college\_london.png]
+![Imperial College Logo](https://d17nlwiklbtu7t.cloudfront.net/4842/club/logo/square_1456960253-3-1203-Unknown.png)
 
-Effects of exposure to airborne pollution on human gene expression
+# Effects of exposure to airborne pollution on human gene expression
 
 Masters in Health Data Analytics and Machine Learning
 
-**CID Number:** 01626516
 
 **Word count:** 9,764
 
 **Date of submission:** 30 August 2019
 
-Acknowledgements
-================
-
-I want to thank my advisor, \[name\], for being so patient and generous with his time throughout this project. His guidance was invaluable. Thanks also to Dr Marc Chadeau-Hyam for all his feedback on this work, for taking a punt and accepting me on this course, and for making statistics so much fun; to Barbara Bodinier for turning us all into coders; and to everyone on the 2018--2019 HDA course for all the interesting debates.
-
-Finally, thank you to my parents and to my sister, for their love and support in this and everything else.
-
-##### Support received by supervisor
-
-\[name\] provided the data for this study, including modelled exposure values. \[name\] had also conducted some exploratory analysis of the data and proposed some avenues of enquiry. \[name\] also provided regular feedback through weekly Skype meetings, and read through one full draft of the report before submission. Dr Marc Chadeau-Hyam also provided feedback on a full draft of the report and guidance during the earlier stages.
 
 Abstract
 ========
@@ -40,139 +29,48 @@ A total of 374 transcripts were identified as significantly associated with expo
 
 Functional analysis showed significant perturbation of phosphoprotein and alternative splicing pathways, which have been used as biomarker predictors of tumour growth and cancer treatment success. Increased effects in women supports previous research indicating women are more severely affected by air pollution than men, although no conclusions can be drawn about whether the effect is biological or behavioural/environmental. Clustering methods suggest a useful adjunct to traditional analytical methods in computational epidemiology, and highlight some weaknesses in land use regression for exposure modelling.
 
-[\
-]{.smallcaps}
 
-Table of Contents {#table-of-contents .TOCHeading}
+Table of Contents
 =================
 
-[Acknowledgements 2]
 
-[Abstract 3]
+1. Abstract
 
-[Introduction 10]
+2. Introduction
+⋅⋅* Air pollution and public health
+⋅⋅* OMICs
+⋅⋅* Research context: air pollution and the internal exposome
+⋅⋅* Research goal
 
-[Air pollution and public health 10]
+3. Methods
 
-[OMICs 11]
+⋅⋅* Data cleaning and preparation
+⋅⋅* Statistical methods 20]
+⋅⋅* Investigating elemental particulate matter
+⋅⋅* Air pollution and smoking: Similar molecular signatures? 
+⋅⋅* Gene enrichment and functional analysis
+⋅⋅* Unsupervised machine learning approaches
 
-[Research context: air pollution and the internal exposome 12]
+4. RESULTS
+⋅⋅* Descriptive statistics
+⋅⋅* Exposures
+⋅⋅* Univariate results
+⋅⋅* Sensitivity analysis
+⋅⋅* Stratified analyses
+⋅⋅* Investigating gender-specific associations
+⋅⋅* The effect of elemental particulate matter
+⋅⋅* Air pollution and smoking: similar molecular signatures?
+⋅⋅* Gene enrichment and functional analysis
+⋅⋅* Unsupervised machine learning results
 
-[Research goal 13]
+5. Discussion
+⋅⋅* Findings
+⋅⋅* Study design and technical comments
 
-[Methods 15]
+6. References
 
-[Data cleaning and preparation 19]
+7. Appendices 
 
-[Statistical methods 20]
-
-[Investigating elemental particulate matter 23]
-
-[Air pollution and smoking: Similar molecular signatures? 25]
-
-[Gene enrichment and functional analysis 25]
-
-[Unsupervised machine learning approaches 26]
-
-[RESULTS 28]
-
-[Descriptive statistics 28]
-
-[Exposures 29]
-
-[Univariate results 31]
-
-[Sensitivity analysis 35]
-
-[Stratified analyses 37]
-
-[Investigating gender-specific associations 39]
-
-[The effect of elemental particulate matter 44]
-
-[Air pollution and smoking: similar molecular signatures? 49]
-
-[Gene enrichment and functional analysis 50]
-
-[Unsupervised machine learning results 53]
-
-[Discussion 60]
-
-[Findings 60]
-
-[Study design and technical comments 68]
-
-[References 71]
-
-[Appendices 79]
-
-[Appendix A 79]
-
-[Appendix B 82]
-
-[Appendix C 87]
-
-[Appendix D 96]
-
-[Table of figures]{.smallcaps}
-
-[**Figure 1** Summary of relative risks for mortality by different air pollutants from multiple epidemiological studies. Relative risk is per 10 μg/m3 increase in pollution. 95% confidence intervals are shown. Reproduced, with permission, from *Global Sources of Local Pollution*^30^, Chapter 3, page 73. Data from a WHO task group report, 2004.^31^ 10]
-
-[**Figure 2** Density plots showing distribution of (logged) TRAPs 30]
-
-[**Figure 3** Joint distributions and correlation scores for seven principal TRAPs (unlogged) 30]
-
-[**Figure 4** Boxplots showing denoised expression levels in the four most significantly affected transcripts, plotted against modelled PM2.5 exposure quartiles. While the associations are significant, the absolute change in expression levels is quite small. 32]
-
-[**Figure 5** Volcano plots showing beta coefficients and p-values for univariate regression of all main TRAP particles and all transcripts. The four most significant associations are labelled in each plot with the name of the gene associated with the transcript. Significant associations, after BH multiple testing adjustment, are observed between PM2.5 and 374 transcripts, but not between any other exposures. 33]
-
-[**Figure 6** A clustered heatmap showing correlation between 374 transcripts significantly associated with PM2.5 in univariate analysis. Hierarchical clustering shows two distinct groups of transcripts: the 285 upregulated and the 89 downregulated in univariate analysis, as well as clusters of highly correlated transcripts within the upregulated cluster. 34]
-
-[**Figure 7** P-value distributions: capped vs uncapped univariate models. Distributions are highly consistent in capped and uncapped models. 36]
-
-[**Figure 8** Beta coefficient distributions: capped vs uncapped models. Distributions are highly consistent in capped and uncapped models. 36]
-
-[**Figure 9** Plots comparing the distribution of p-values and beta coefficients in stratified results versus unstratified, investigating the associations between PM2.5 and transcripts. Significant associations (BH p-value \<0.2 -- lowered to reveal more associations in a lower-powered, smaller n analysis) are highlighted in red. Fewer significant results are observed in men, and in the 28--33 stratum. 38]
-
-[**Figure 10** Distributions of p-values in male and female cohorts (red = female; blue = male). Thick lines show p-value distribution in the full male/female cohorts. Each faint line shows a p-value distribution in a random sub-sample of 500 males or females. Female subsamples are shown to have p-value distributions more weighted towards lower values (higher significance), more often. 39]
-
-[**Figure 11** Distribution of number of significant associations (p\<0.001) found in random n=500 sub-samples of male and female observations. More significant associations are observed in female subsamples. 40]
-
-[**Figure 12** Plots comparing the distribution of p-values and beta coefficients in urbanicity-stratified results versus unstratified, investigating the associations between PM2.5 and transcripts. Significant associations (BH p-value \<0.2) are highlighted in red. 42]
-
-[**Figure 13** Volcano plots showing p-values and beta coefficients for significant transcripts in a controlled univariate model, investigating the associations between PM2.5 and transcripts, stratified by urbanicity. Only 374 selected transcripts are shown. Stronger associations are seen in areas of lower urbanicity, especially STED 3 and STED 5. 43]
-
-[**Figure 14** Volcano plots showing results from univariate analysis of 374 significant transcripts and eight elemental pm2.5 particles. X-axis is shown on the same scale as the volcano plots in the univariate analysis of total PM2.5 in **Figure 5**, to demonstrate the difference in effect size. The most significant results can be seen in copper (Cu), Sulphur (S), Silicon (Si) and Iron (Fe). 45]
-
-[**Figure 15** P-values for univariate regression models for elemental PM2.5 particles plotted against P-values for univariate regression of PM2.5 Only the 374 transcripts selected by univariate analysis are shown. 46]
-
-[**Figure 16** Beta coefficients for univariate regression models for elemental PM2.5 particles plotted against beta coefficients for univariate regression of PM2.5. Effects are highly consistent in direction, but smaller in size in elemental particles than in total PM2.5. Only the 374 transcripts selected by univariate analysis are shown. 46]
-
-[**Figure 17** Results of stability analysis, regressing 4 significant transcripts separately onto PM25 elemental particles using repeated ElasticNet regression. 47]
-
-[**Figure 18** Posterior distribution of the regression coefficient for PM2.5\_Cu (elemental copper particulate matter). Plots show upregulation of transcripts coded by ZNF791, BTBD1 and OSBPL8, and downregulation of a transcript coded by WIPF2. 48]
-
-[**Figure 19** MPPI output from R2GUESS when eight elemental PM2.5 particles are used as predictors for four significant TRAPs. Elemental copper PM2.5 is the only selected predictor variable. 48]
-
-[**Figure 20** Gene ontology biological process analysis using BINGO^96^ The number of genes involved in the process is indicated by the size of the node. The significance of the over-representation of the selected gene set in the relevant biological process is represented through the colour of the node (darker = lower adjusted p-value) 51]
-
-[**Figure 21** A Sankey diagram showing how study participants are grouped within clusters across four dimensions From left to right, dimensions are: TRAPs, Geography, Traffic, Demographic. The diagram clearly shows how a very similar group of participants in clustered together across three dimensions (the second cluster in TRAPs, geography and traffic). 54]
-
-[**Figure 22** Joint distribution of exposure levels in geographical clusters, for seven principal TRAPs. For all TRAPs, exposure is highest in cluster 2, and lowest in cluster 1, although there is less variation in PM2.5 levels between clusters than the other TRAPs. Plots along the top and left margins show the marginal distributions of each exposure, grouped by geographical cluster. Sub-diagonal plots show joint distributions for all exposures, with the colour of each data point indicating which geographical cluster the point belonged to. Numbers represent correlations between exposures, broken down within geographical clusters. 55]
-
-[**Figure 23** Joint distribution of exposure levels in geographical clusters, for elemental PM2.5 particles. Exposure levels follow a similar pattern to the principal TRAPs -- with cluster 2 being the highest exposed and cluster 1 the lowest -- with the exception of Zinc and Potassium. Plots along the top and left margins show the marginal distributions of each elemental particle exposure, grouped by geographical cluster. Sub-diagonal plots show joint distributions for all exposures, with the colour of each data point indicating which geographical cluster the point belonged to. Numbers represent correlations between elemental particle levels, broken down within geographical clusters. 56]
-
-[**Figure 24** Variable importance in random forest regression models, using geographical variables to predict which TRAP cluster a person will be assigned to. The model notably selects the variables which operate at the broadest geographical scale. 57]
-
-[**Figure 25** Scatter plots showing log10 p-values for adjusted univariate analysis of 374 transcripts against 7 principal TRAPs, stratified by cluster. Results show strong associations in demographic cluster 2, geographical cluster 1, traffic cluster 1 and TRAP cluster 1. 59]
-
-[**Figure 26** Variance of measurements of O~3~ (left) NO~2~ (middle) and PM10 (right), plotted against Beta-parameters from land use regression models. Variance increases as TRAP exposure increases, and rural areas are shown to have the lowest variance. Reproduced, with permission, from: Janssen *et al*. Spatial interpolation of air pollution measurements using CORINE land cover data. Atmospheric Environment; Volume 42, Issue 20, June 2008, Pages 4884-4903.^152^ 64]
-
-[**Figure 27** Car ownership in the Netherlands in 2015 Reproduced from *Trends in the Netherlands 2018*, Central Bureau of Statistics Netherlands, 2018^163^ 66]
-
-[**Figure 28** Chart showing miles travelled annually in cars, per person per year, in urban and rural areas in the UK. Data taken from UK government land management statistics: *Transport and Travel in Rural Areas*, 2016.^167^ 66]
-
-[**Figure 29** Boxplots showing distribution of modelled main TRAP exposure levels, by urbanicity 69]
 
 Introduction
 ============
